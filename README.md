@@ -1,44 +1,66 @@
-# Project Name
+# What to Wear (WTWR) – Frontend
 
-WTWR (What To Wear)
+Modular React frontend for a weather-based outfit planner application. Dynamically renders clothing suggestions based on real-time weather data.
 
-## Description
+---
 
-What not to wear is an application that provides clothing options based on the current weather in a given area. Users can create an account and upload their own clothing items with a picture, a name, and what type of weather the clothing is best for. Users that are signed in can view and like other users clothing items that are suited for the current weather on the main page. Each user can only like each clothing item once. Users can only add items when they are logged in and can only delete the items that they have posted. There is a seperate profile page for signed in useres where they can view a complete list of the clothing items accosiated with their account and edit their profile information.
-Users will stay logged in for 7 days, or until they sign out.
+## 🌍 Live Demo
 
-## Technologies and Techniques
+https://wtwrzc.port0.org/
 
-- HTML5
+---
+
+## 📸 Screenshots
+
+![Home Screen Logged In](./src/assets/demo/home-logged-in.png)
+![Home Screen Logged Out](./src/assets/demo/home-logged-out.png)
+![Sign Up Modal](./src/assets/demo/modal-1.png)
+![Sign In Modal](./src/assets/demo/modal-2.png)
+![New Garment Modal Empty](./src/assets/demo/modal-3.png)
+![New Garment Modal Filled](./src/assets/demo/modal-4.png)
+![Change Profile Modal](./src/assets/demo/modal-5.png)
+![Clothing Item Modal](./src/assets/demo/modal-6.png)
+![Delete Confirmation Modal](./src/assets/demo/modal-7.png)
+![User Profile Page](./src/assets/demo/profile-page.png)
+![Tempurature Unit Switch](./src/assets/demo/temp-unit-switch.png)
+![Weather Display Fahrenheit](./src/assets/demo/temp-f.png)
+![Weather Display Celsius](./src/assets/demo/temp-c.png)
+![Home Screen Mobile](./src/assets/demo/mobile-1.png)
+![Mobile Menu](./src/assets/demo/mobile-2.png)
+![Mobile Profile Page](./src/assets/demo/mobile-3.png)
+![Mobile Sign Up Modal](./src/assets/demo/mobile-4.png)
+
+---
+
+## 📌 Overview
+
+WTWR provides clothing recommendations based on current weather conditions. The frontend integrates with a backend API to manage user accounts and clothing items.
+
+---
+
+## 🛠 Tech Stack
+
+- React
+- JavaScript (ES6+)
 - CSS
-- Javascript
-- JSX
-- React.js
-- Node.js
-- React-Router
-- Local Storage
-- API Requests (from)
+- REST API Integration
 
-## Backend
+---
 
-https://wtwrzc.port0.org
+## ✨ Key Features
 
-### Images
+- Weather API integration
+- Dynamic UI updates
+- User authentication support
+- Item management (add/remove)
+- Loading states and error handling
 
-![alt text](./src/assets/demo/home-logged-in.png)
-![alt text](./src/assets/demo/home-logged-out.png)
-![alt text](./src/assets/demo/modal-1.png)
-![alt text](./src/assets/demo/modal-2.png)
-![alt text](./src/assets/demo/modal-3.png)
-![alt text](./src/assets/demo/modal-4.png)
-![alt text](./src/assets/demo/modal-5.png)
-![alt text](./src/assets/demo/modal-6.png)
-![alt text](./src/assets/demo/modal-7.png)
-![alt text](./src/assets/demo/profile-page.png)
-![alt text](./src/assets/demo/temp-unit-switch.png)
-![alt text](./src/assets/demo/temp-f.png)
-![alt text](./src/assets/demo/temp-c.png)
-![alt text](./src/assets/demo/mobile-1.png)
-![alt text](./src/assets/demo/mobile-2.png)
-![alt text](./src/assets/demo/mobile-3.png)
-![alt text](./src/assets/demo/mobile-4.png)
+---
+
+## ⚙️ Installation
+
+```bash
+git clone https://github.com/Zchabot/wtwr-frontend.git
+npm install
+npm start
+```
