@@ -119,6 +119,7 @@ function App() {
     setActiveModal("");
   };
 
+  // UX: surface server-side validation/auth errors so users know what to fix
   function handleSubmit(request, form) {
     setIsLoading(true);
     request()
@@ -248,6 +249,7 @@ function App() {
     setActiveModal("register");
   };
 
+  // Initial load: restore auth session (if token exists) and fetch user + items
   useEffect(() => {
     const jwt = getToken();
 

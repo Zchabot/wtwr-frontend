@@ -1,5 +1,6 @@
 import { baseUrl } from "./constants";
 
+// Standardize fetch responses: resolve JSON on success, reject with a usable error on failure
 export const processResponse = (res) => {
   if (res.ok) {
     return res.json();
@@ -7,6 +8,12 @@ export const processResponse = (res) => {
   return Promise.reject(`Error: ${res.status}`);
 };
 
+/**
++ * API client wrapper:
++ * - Centralizes fetch logic + JSON parsing
++ * - Attaches Authorization header when a JWT exists
++ * - Keeps components focused on UI/state, not request plumbing
++ */
 export function request(url, options) {
   return fetch(url, options).then(processResponse);
 }
