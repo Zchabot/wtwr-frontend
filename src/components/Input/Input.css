@@ -7,6 +7,10 @@
   color: #ff4d00;
 }
 
+.input__field {
+  position: relative;
+}
+
 .input__element {
   display: block;
   width: 100%;
@@ -19,4 +23,32 @@
 .input__element_error {
   color: #ff4d00;
   border-color: #ff4d00;
+}
+
+.input__element_password-button {
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 2px;
+  right: 0;
+  height: 20px;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.input__element_visiblility-icon {
+  height: 20px;
+  width: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.input__element_visiblility-icon:hover {
+  opacity: 0.7;
+}
+
+.input__element_visiblility-icon_visible {
+  opacity: 0.55;
 }

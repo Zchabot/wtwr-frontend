@@ -22,13 +22,13 @@ https://wtwrzc.port0.org/
 ![Clothing Item Modal](./src/assets/demo/modal-6.png)
 ![Delete Confirmation Modal](./src/assets/demo/modal-7.png)
 ![User Profile Page](./src/assets/demo/profile-page.png)
-![Tempurature Unit Switch](./src/assets/demo/temp-unit-switch.png)
+![Temperature Unit Switch](./src/assets/demo/temp-unit-switch.png)
 ![Weather Display Fahrenheit](./src/assets/demo/temp-f.png)
 ![Weather Display Celsius](./src/assets/demo/temp-c.png)
-![Home Screen Mobile](./src/assets/demo/mobile-1.png)
-![Mobile Menu](./src/assets/demo/mobile-2.png)
-![Mobile Profile Page](./src/assets/demo/mobile-3.png)
-![Mobile Sign Up Modal](./src/assets/demo/mobile-4.png)
+![Home Screen Mobile](./src/assets/demo/mobile-home.png)
+![Mobile Menu](./src/assets/demo/mobile-menu.png)
+![Mobile Profile Page](./src/assets/demo/mobile-profile.png)
+![Mobile Sign Up Modal](./src/assets/demo/mobile-sign-up.png)
 
 ---
 
@@ -57,10 +57,40 @@ WTWR provides clothing recommendations based on current weather conditions. The 
 
 ---
 
-## ⚙️ Installation
+## ⚙️ Run Locally
+
+### Prerequisites
+
+- Node.js (v23.x recommended — npm included)
+- What to Wear (WTWR) backend running (see backend README)
+
+The frontend is configured to connect to the backend at:
+http://localhost:3001 when running locally.
+
+### Setup
 
 ```bash
 git clone https://github.com/Zchabot/wtwr-frontend.git
+cd wtwr-frontend
 npm install
-npm start
 ```
+
+### Start Development Server
+
+```bash
+npm run dev
+```
+
+The app will run at:
+http://localhost:3000
+
+### API Configuration
+
+The frontend automatically connects to:
+
+- `http://localhost:3001` during local development
+- The deployed backend API in production builds
+
+To use a different backend, update the `baseUrl` configuration in:
+
+`src/utils/constants.js`

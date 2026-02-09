@@ -12,6 +12,7 @@ function ModalWithForm({
   onClose,
   onFormSubmit,
   isValid,
+  formName,
 }) {
   return (
     <Modal
@@ -28,6 +29,7 @@ function ModalWithForm({
         loadingButtonText={loadingButtonText}
         buttonText={buttonText}
         children={children}
+        formName={formName}
       />
     </Modal>
   );

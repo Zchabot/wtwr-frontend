@@ -48,8 +48,28 @@ function App() {
   });
   const [hasAvatar, setHasAvatar] = useState(true);
   const [cardOwner, setCardOwner] = useState("");
+  const [formError, setFormError] = useState({});
   const navigate = useNavigate();
   const location = useLocation();
+
+  const setFormErrorMessage = ({ form, err }) => {
+    if (err === "Error: 409") {
+      setFormError({ ...formError, [form]: "This email is not available" });
+    } else {
+      if (err === "Error: 400") {
+        setFormError({ ...formError, [form]: "Invalid data provided" });
+      } else {
+        if (err === "Error: 401") {
+          setFormError({ ...formError, [form]: "Incorrect email or password" });
+        } else {
+          setFormError({
+            ...formError,
+            [form]: "An error has occurred on the server",
+          });
+        }
+      }
+    }
+  };
 
   const handleOpenMenu = () => {
     setOpenMenu(true);
@@ -99,14 +119,20 @@ function App() {
     setActiveModal("");
   };
 
-  function handleSubmit(request) {
+  function handleSubmit(request, form) {
     setIsLoading(true);
     request()
       .then(() => {
         closeActiveModal();
         setSubmitSuccess(true);
+        setFormError({});
       })
-      .catch(console.error)
+      .catch((err) => {
+        console.error;
+        setFormErrorMessage({ form, err });
+        console.log(form);
+        console.log(err);
+      })
       .finally(() => setIsLoading(false));
   }
 
@@ -138,7 +164,7 @@ function App() {
     handleSubmit(makeRequest);
   };
 
-  const handleLogin = ({ email, password }) => {
+  const handleLogin = ({ email, password }, form) => {
     if (!email || !password) {
       return;
     }
@@ -155,16 +181,16 @@ function App() {
         }
       });
     };
-    handleSubmit(makeRequest);
+    handleSubmit(makeRequest, form);
   };
 
-  const handleRegistration = (data) => {
+  const handleRegistration = (data, form) => {
     const makeRequest = () => {
       return auth.register(data).then(() => {
         handleLogin({ email: data.email, password: data.password });
       });
     };
-    handleSubmit(makeRequest);
+    handleSubmit(makeRequest, form);
   };
 
   const handleLogOut = () => {
@@ -271,6 +297,8 @@ function App() {
         setHasAvatar,
         handleCardLike,
         clothingItems,
+        formError,
+        setFormError,
       }}
     >
       <div className="page">

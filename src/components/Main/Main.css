@@ -6,6 +6,12 @@
   src: url("../../vendor/fonts/CabinetGrotesk-Bold.woff2") format("woff2");
 }
 
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .cards__list {
   display: flex;
   flex-wrap: wrap;
@@ -18,6 +24,7 @@
   font-family: "Cabinet Grotesk", Arial, Helvetica, sans-serif;
   font-size: 20px;
   line-height: 1.25;
+  align-self: flex-start;
 }
 
 .cards__randomize-button {
@@ -43,12 +50,43 @@
   height: 14.78px;
 }
 
+@media screen and (max-width: 1439px) {
+  .cards__list {
+    max-width: 1018px;
+  }
+}
+
+@media screen and (max-width: 1094px) {
+  .cards__list {
+    max-width: 672px;
+  }
+}
+
+@media screen and (max-width: 1094px) {
+  .cards__list {
+    max-width: 672px;
+  }
+}
+
 @media screen and (max-width: 750px) {
   .cards__list {
     gap: 15px;
+    max-width: 522px;
   }
 
   .cards__randomize-button {
     visibility: visible;
+  }
+}
+
+@media screen and (max-width: 553px) {
+  .cards__list {
+    max-width: 343px;
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .cards__list {
+    max-width: 164px;
   }
 }

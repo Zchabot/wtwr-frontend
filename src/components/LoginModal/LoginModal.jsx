@@ -13,12 +13,14 @@ function LoginModal({
   handleLogin,
   handleSignupButton,
 }) {
+  const formName = "log-in";
+
   const { values, handleChange, errors, isValid, resetForm } =
     useFormAndValidation();
 
   const onFormSubmit = (evt) => {
     evt.preventDefault();
-    handleLogin(values);
+    handleLogin(values, formName);
   };
 
   useEffect(() => {
@@ -37,6 +39,7 @@ function LoginModal({
       onClose={onClose}
       onFormSubmit={onFormSubmit}
       isValid={isValid}
+      formName={formName}
     >
       <Input
         id="login-email"
@@ -55,7 +58,7 @@ function LoginModal({
         labelText="Password*"
         preErrorMsgTxt=" "
         inputName="password"
-        type="text"
+        type="password"
         placeholder="Password"
         values={values.password}
         handleChange={handleChange}

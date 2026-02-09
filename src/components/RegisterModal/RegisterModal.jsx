@@ -13,12 +13,14 @@ function RegisterModal({
   handleRegistration,
   handleLoginButton,
 }) {
+  const formName = "register";
+
   const { values, handleChange, errors, isValid, resetForm } =
     useFormAndValidation();
 
   const onFormSubmit = (evt) => {
     evt.preventDefault();
-    handleRegistration(values);
+    handleRegistration(values, formName);
   };
 
   useEffect(() => {
@@ -37,6 +39,7 @@ function RegisterModal({
       onClose={onClose}
       onFormSubmit={onFormSubmit}
       isValid={isValid}
+      formName={formName}
     >
       <Input
         id="register-email"
@@ -55,7 +58,7 @@ function RegisterModal({
         labelText="Password*"
         preErrorMsgTxt=" "
         inputName="password"
-        type="text"
+        type="password"
         placeholder="Password"
         values={values.password}
         handleChange={handleChange}

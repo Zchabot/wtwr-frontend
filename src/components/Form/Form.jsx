@@ -1,6 +1,9 @@
+import { useContext, useEffect } from "react";
 import "./Form.css";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 function Form({
+  formName,
   title,
   onFormSubmit,
   isValid,
@@ -9,6 +12,12 @@ function Form({
   buttonText,
   children,
 }) {
+  const { formError } = useContext(CurrentUserContext);
+
+  useEffect(() => {
+    console.log(formError), [formError];
+  });
+
   return (
     <>
       <h2 className="form__title">{title}</h2>
@@ -22,6 +31,7 @@ function Form({
         <button className="form__submit" type="submit" disabled={!isValid}>
           {`${isLoading === true ? `${loadingButtonText}` : `${buttonText}`}`}
         </button>
+        <p className="form__error">{formError[formName]}</p>
       </form>
     </>
   );

@@ -47,6 +47,19 @@
   opacity: 0.3;
 }
 
+.form__error {
+  color: #ff0000;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.21;
+  position: absolute;
+  bottom: 45px;
+  align-self: center;
+  margin: 0;
+  padding: 0;
+}
+
 @media screen and (max-width: 750px) {
   .form__title {
     font-size: 20px;
@@ -57,5 +70,9 @@
     height: 44px;
     width: 100%;
     margin-top: 6px;
+  }
+
+  .form__error {
+    bottom: 50px;
   }
 }
