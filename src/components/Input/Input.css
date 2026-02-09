@@ -17,7 +17,7 @@
   border: none;
   border-bottom: solid 1px #000;
   margin: 8px 0 0;
-  padding: 0 0 4px;
+  padding: 2px 0 2px;
 }
 
 .input__element_error {
